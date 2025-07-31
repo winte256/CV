@@ -1,258 +1,90 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+\documentclass[a4paper,9pt]{article}
 
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
-
-%----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-%tabularx environment
+\usepackage{parskip}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,urlcolor=blue}
 
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\section}{0pt}{6pt}{6pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+\setlength{\parskip}{3pt}
 
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-%for social icons
-\usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
-
-
-
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
 \begin{document}
+\pagestyle{empty}
 
-% non-numbered pages
-\pagestyle{empty} 
+\begin{center}
+    {\Huge Mikhail Krutikhin} \quad
+    \href{https://linkedin.com/in/mikhail-krutikhin}{linkedin.com/in/mikhail-krutikhin} \quad
+    \href{mailto:m.krutihin@gmail.com}{m.krutihin@gmail.com}
+\end{center}
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
-
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Mikhail Krutikhin} \\[7.5pt]
-\href{https://github.com/winte256}{\raisebox{-0.05\height}\faGithub\ Winte256} \ $|$ \ 
-\href{https://linkedin.com/in/mikhail-krutikhin}{\raisebox{-0.05\height}\faLinkedin\ mikhail-krutikhin} \ $|$ \ 
-% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:m.krutihin@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ m.krutihin@gmail.com} \ $|$ \ 
-\href{tel:+358413142334}{\raisebox{-0.05\height}\faMobile \ +358 41 314 2334} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
 \section{Summary}
-Senior Frontend Engineer with 8+ years of experience specializing in building scalable, high-performance consumer-facing web applications. 
+Senior Frontend Engineer with over 8 years of experience delivering scalable, high-performance web applications in cross-functional agile teams. Specialized in React, Vue, and modern TypeScript ecosystems.\\
 
-Proven track record in leading technical initiatives, improving developer experience, and delivering robust, user-focused products.
-
-Core Competencies: React, TypeScript, Vue.js, GraphQL, Frontend Architecture, Performance Optimization, Agile Methodologies, CI/CD.
-
-%Experience
+Expirienced in leading frontend migrations, designing robust UI architecture, improving developer experience, and optimizing application performance.
 \section{Work Experience}
 
-\begin{joblong}{Digital Wave Technology}{Nov 2023 - Present}
-  \item /Stack/: {TypeScript, Vue, GraphQL, k8s, Node.js}
-{\fontsize{13.2pt}{14.6pt}\selectfont
-  \item[*] Key Responsibilities:
-    \begin{itemize}
-      \item[--] Collaborated with executive stakeholders to define product requirements and implementation roadmap.
-      \item[--] Developed and maintained frontend architecture for complex, scalable applications.
-      \item[--] Played a key role in migration efforts from proprietary solutions to modern frameworks such as AG Grid, addressing filtering, integration, sorting, and GraphQL-related tasks.
-      \item[--] Implemented BPM-driven solutions integrating Camunda for workflow automation.
-      \item[--] Built advanced UI components interfacing seamlessly with AI-driven back-end.
-      \item[--] Conducted technical interviews, contributing to talent acquisition.
-    \end{itemize}
+\textbf{Digital Wave Technology} \hfill Nov 2023 -- Present
 
-  \item[*] Achievements:
-    \begin{itemize}
-      \item[--] Launched an in-app chat system, significantly enhancing user engagement.
-      \item[--] Delivered custom control panels for Camunda, improving operational efficiency.
-      \item[--] Improved app performance and usability by optimizing frontend components.
-    \end{itemize}
-}
-\end{joblong}
+\textit{/Stack/: TypeScript, Vue, GraphQL, k8s, Node.js}
+\begin{itemize}[leftmargin=*]
+  \item Collaborated with executive stakeholders to define product requirements and implementation roadmap.
+  \item Developed and maintained frontend architecture for complex, scalable applications.
+  \item Played a key role in migration efforts from proprietary solutions to modern frameworks such as AG Grid, addressing filtering, integration, sorting, and GraphQL-related tasks.
+  \item Implemented BPM-driven solutions integrating Camunda for workflow automation.
+  \item Built advanced UI components interfacing seamlessly with AI-driven back-end.
+  \item Conducted technical interviews, contributing to talent acquisition.
+  \item Launched an in-app chat system, significantly enhancing user engagement.
+  \item Delivered custom control panels for Camunda, improving operational efficiency.
+  \item Improved app performance and usability by optimizing frontend components.
+\end{itemize}
+\vspace{6pt}
 
-\begin{joblong}{DEXART}{Jul 2022 - Nov 2023}
-  \item /Stack/: {Vue, Nuxt, TypeScript, GraphQL, Vercel, OAuth, SSR, BFF}
+\textbf{DEXART} \hfill Jul 2022 -- Nov 2023
 
-  \item [*] Key Responsibilities:
-\begin{itemize}
-  \item [--] Led development of frontend applications utilizing Nuxt.js and GraphQL.
-  \item [--] Developed robust user authentication and registration systems supporting OAuth and Web3.
-  \item [--] Coordinated with backend teams to ensure seamless integration and optimal performance.
-  \item [--] Spearheaded initiatives enhancing multi-language support, resulting in doubled conversion rates.
+\textit{/Stack/: Vue, Nuxt, TypeScript, GraphQL, Vercel, OAuth, SSR, BFF}
+\begin{itemize}[leftmargin=*]
+  \item Led development of frontend applications utilizing Nuxt.js and GraphQL.
+  \item Developed robust user authentication and registration systems supporting OAuth and Web3.
+  \item Coordinated with backend teams to ensure seamless integration and optimal performance.
+  \item Spearheaded initiatives enhancing multi-language support, resulting in doubled conversion rates.
+  \item Successfully transitioned platform to serverless infrastructure (Vercel), reducing operational overhead.
+  \item Led migration from Nuxt 2 to Nuxt 3, maintaining continuity and improving app performance.
+  \item Automated review processes with GitHub Actions, significantly boosting team productivity.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{OTON Technology} \hfill Dec 2017 -- Jul 2022
+
+\textit{/Stack/: React, TypeScript, Next.js, Vue, Node.js}
+\begin{itemize}[leftmargin=*]
+  \item Developed scalable frontend solutions for high-load Web3 applications.
+  \item Maintained close collaboration with backend teams for integration and feature development.
+  \item Mentored and managed junior frontend developers, fostering growth and skills development.
+  \item Successfully delivered major frontend overhaul improving performance and stability.
+  \item Pioneered frontend solutions using modern frameworks, significantly accelerating feature development.
+\end{itemize}
+\vspace{6pt}
+
+\textbf{TradeSoft Company} \hfill May 2017 -- Dec 2017
+\begin{itemize}[leftmargin=*]
+  \item Collaborated with the backend team to address frontend requirements and integration points.
+  \item Contributed to the project's overall success, with "Parts-Catalogs" witnessing increased usability and customer satisfaction during my tenure.
 \end{itemize}
 
-  \item [*] Achievements:
-\begin{itemize}
-  \item [--] Successfully transitioned platform to serverless infrastructure (Vercel), reducing operational overhead.
-  \item [--] Led migration from Nuxt 2 to Nuxt 3, maintaining continuity and improving app performance.
-  \item [--] utomated review processes with GitHub Actions, significantly boosting team productivity.
-\end{itemize}
-\end{joblong}
-
-\newpage % Start new page for clarity and improved readability
-
-\begin{joblong}{OTON Technology}{Dec 2017 - Jul 2022}
-  \item /Stack/: {React, TypeScript, Next.js, Vue, Node.js}
-  \item [*] Main Tasks:
-    \begin{itemize}
-      \item [--] Developed scalable frontend solutions for high-load Web3 applications.
-      \item [--] Maintained close collaboration with backend teams for integration and feature development.
-      \item [--] Mentored and managed junior frontend developers, fostering growth and skills development.
-    \end{itemize}
-
-  \item [*] Results:
-      \begin{itemize}
-      \item [--] Successfully delivered major frontend overhaul improving performance and stability.
-      \item [--] Pioneered frontend solutions using modern frameworks, significantly accelerating feature development.
-        \end{itemize}
-\end{joblong}
-
-\begin{joblong}{TradeSoft Company}{May 2017 - Dec 2017}
-  \item[*] Context
-    \begin{itemize}
-      \item [--] Collaborated with the backend team to address frontend requirements and integration points.
-    \end{itemize}
-  \item [*] Results:
-    \begin{itemize}
-      \item [--] Contributed to the project's overall success, with "Parts-Catalogs" witnessing increased usability and customer satisfaction during my tenure.
-    \end{itemize}
-\end{joblong}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2014 - 2016 & Diploma in Information Technology (Incomplete) at \textbf{Kirov Aviation College} \hfill \normalsize  \\
-\end{tabularx}
+Diploma Program in Information Technology, Kirov Aviation College \hfill 2014--2016
 
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
 \section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Frontend &  \normalsize{React, TypeScript, Vue.js, Node.js, Fastify, Swagger, HTML, CSS, SSR, GraphQL, SQL}\\
-Tools  &  \normalsize{Docker, Kubernetes, Helm, Git, CI/CD, OAuth, BFF}\\  
-Soft Skills  &  \normalsize{Leadership, Communication, Problem-solving, Agile methodologies, Self-motivated}\\  
-Languages & \normalsize{English (Full Professional), Russian (Native)}\\  
-\end{tabularx}
+\textbf{Frontend:} React, TypeScript, Vue.js, GraphQL, Node.js, SSR, Fastify, Swagger, HTML, CSS, SQL\\
+\textbf{Tools:} Docker, Kubernetes, Helm, Git, CI/CD, OAuth, BFF\\
+\textbf{Soft Skills:} Team player, Adaptability, Leadership, Agile, Problem-solving, Communication\\
+\textbf{Languages:} English (Full Professional), Russian (Native), Finnish (Basic)
 
 \vfill
 \center{\footnotesize Last updated: \today}
